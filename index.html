@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Vaksinasi Mahasiswa</title>
+    <link rel="stylesheet" href="style.css"/>
+    
+</head>
+<body>
+    <div class="container">
+        <!--<div class="brand-logo"></div>-->
+        <div class="brand-title">Data Vaksinasi Mahasiswa</div>
+        <div class="inputs">
+          <form name="formPendaftaran" action="/action_page.php" onsubmit="return validateForm()" method="post">
+            <label>Nama</label>
+            <input type="text" name="name" placeholder="" />
+            <label>NRP</label>
+            <input type="number" name="nrp" placeholder="" />
+            <label>Jurusan</label>
+            <input type="text" name="jurusan" placeholder="" />
+            <label>Email</label>
+            <input type="email" name="email" placeholder="" />
+            <label>Dosis Vaksin</label>
+            <button type="submit">SUBMIT</button>
+          </form>
+          <div class="number-input">
+            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+            <input class="quantity" min="0" name="quantity" value="0" type="number" max="3">
+            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function validateForm() {
+                if (document.forms["formPendaftaran"]["name"].value == "") {
+                    alert("Nama Tidak Boleh Kosong");
+                    document.forms["formPendaftaran"]["name"].focus();
+                    return false;
+                }
+                if (document.forms["formPendaftaran"]["nrp"].value == "") {
+                    alert("NRP Tidak Boleh Kosong");
+                    document.forms["formPendaftaran"]["nrp"].focus();
+                    return false;
+                }
+                if (document.forms["formPendaftaran"]["jurusan"].value == "") {
+                    alert("Jurusan Tidak Boleh Kosong");
+                    document.forms["formPendaftaran"]["jurusan"].focus();
+                    return false;
+                }
+                if (document.forms["formPendaftaran"]["email"].value == "") {
+                    alert("Email Tidak Boleh Kosong");
+                    document.forms["formPendaftaran"]["email"].focus();
+                    return false;
+                }
+            }
+      </script>
+</body>
+</html>
